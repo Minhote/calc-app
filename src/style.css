@@ -1,0 +1,618 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.35s ease-in-out;
+  font-family: "League Spartan", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+body .calc {
+  width: 35%;
+  height: 80%;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  body .calc {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  body .calc {
+    width: 80%;
+  }
+}
+body .calc__head {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-row: 1/2;
+}
+body .calc__head__switcher {
+  display: flex;
+  gap: 1rem;
+}
+body .calc__head__switcher__para {
+  align-self: end;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+body .calc__head__switcher__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+body .calc__head__switcher__wrapper__numbers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .calc__head__switcher__wrapper__bar {
+  position: relative;
+  height: 2rem;
+  width: 6rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .calc__head__switcher__wrapper__bar:hover {
+  cursor: pointer;
+}
+body .calc__head__switcher__wrapper__bar span {
+  height: 100%;
+  width: 33%;
+}
+body .calc__head__switcher__wrapper__bar__point {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  transition: all 0.5s ease-in-out;
+}
+body .calc__bar {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  height: 15vh;
+  position: relative;
+  border-radius: 5px;
+}
+body .calc__keyboard {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  padding: 2rem;
+  border-radius: 10px;
+}
+body .calc__keyboard__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.5rem;
+  font-size: 3.2rem;
+}
+body .calc__keyboard__grid .calc__key__1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__13 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__14 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__15 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__16 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__17 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__18 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__4 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+body .calc__keyboard__grid .calc__key__17 {
+  text-transform: uppercase;
+  grid-column: span 2;
+  font-size: 2rem;
+}
+body .calc__keyboard__grid .calc__key__18 {
+  text-transform: uppercase;
+  grid-column: span 2;
+}
+body.theme__1 {
+  background-color: hsl(222deg, 26%, 31%);
+}
+body.theme__1 .calc__head {
+  color: hsl(30deg, 25%, 89%);
+}
+body.theme__1 .calc__head__switcher__wrapper__bar {
+  background-color: hsl(223deg, 31%, 20%);
+}
+body.theme__1 .calc__head__switcher__wrapper__bar__point {
+  background-color: hsl(6deg, 63%, 50%);
+}
+body.theme__1 .calc__bar {
+  background-color: hsl(224deg, 36%, 15%);
+}
+body.theme__1 .calc__keyboard {
+  background-color: hsl(223deg, 31%, 20%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__1 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__2 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__3 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__5 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__6 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__7 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__8 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__9 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__10 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__11 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__12 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__13 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__14 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__15 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__16 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(225deg, 21%, 49%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(224deg, 28%, 35%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(225deg, 21%, 49%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(224deg, 28%, 35%);
+}
+body.theme__1 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(6deg, 63%, 50%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(6deg, 70%, 34%);
+}
+body.theme__2 {
+  background-color: hsl(0deg, 0%, 90%);
+}
+body.theme__2 .calc__head {
+  color: hsl(221deg, 14%, 31%);
+}
+body.theme__2 .calc__head__switcher__wrapper__bar {
+  background-color: hsl(0deg, 5%, 81%);
+}
+body.theme__2 .calc__head__switcher__wrapper__bar__point {
+  background-color: hsl(25deg, 98%, 40%);
+}
+body.theme__2 .calc__bar {
+  background-color: hsl(0deg, 0%, 93%);
+}
+body.theme__2 .calc__keyboard {
+  background-color: hsl(0deg, 5%, 81%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__1 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__2 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__3 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__5 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__6 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__7 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__8 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__9 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__10 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__11 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__12 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__13 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__14 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__15 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__16 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: inset 0px -10px 0px -7px hsl(28deg, 16%, 65%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(185deg, 42%, 37%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(185deg, 58%, 25%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(185deg, 42%, 37%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(185deg, 58%, 25%);
+}
+body.theme__2 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(25deg, 98%, 40%);
+  color: hsl(30deg, 25%, 89%);
+  box-shadow: inset 0px -10px 0px -7px hsl(25deg, 99%, 27%);
+}
+body.theme__3 {
+  background-color: hsl(268deg, 75%, 9%);
+}
+body.theme__3 .calc__head {
+  color: hsl(52deg, 100%, 62%);
+}
+body.theme__3 .calc__head__switcher__wrapper__bar {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme__3 .calc__head__switcher__wrapper__bar__point {
+  background-color: hsl(176deg, 100%, 44%);
+}
+body.theme__3 .calc__bar {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme__3 .calc__keyboard {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__1 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__2 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__3 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__5 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__6 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__7 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__8 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__9 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__10 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__11 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__12 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__13 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__14 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__15 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__16 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: inset 0px -10px 0px -7px hsl(290deg, 70%, 36%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__4 {
+  background-color: hsl(281deg, 89%, 26%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: inset 0px -10px 0px -7px hsl(285deg, 91%, 52%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__17 {
+  background-color: hsl(281deg, 89%, 26%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: inset 0px -10px 0px -7px hsl(285deg, 91%, 52%);
+}
+body.theme__3 .calc__keyboard__grid .calc__key__18 {
+  background-color: hsl(176deg, 100%, 44%);
+  color: hsl(268deg, 47%, 21%);
+  box-shadow: inset 0px -10px 0px -7px hsl(177deg, 92%, 70%);
+}
+
+/*# sourceMappingURL=style.css.map */
