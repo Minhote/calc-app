@@ -90,8 +90,29 @@ body .calc__bar {
   grid-column: 1/-1;
   grid-row: 2/3;
   height: 15vh;
-  position: relative;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+body .calc__bar__1 {
+  flex-basis: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 2rem;
+  padding-right: 1.5rem;
+}
+body .calc__bar__2 {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 4.5rem;
+  width: 100%;
+  padding-right: 2rem;
 }
 body .calc__keyboard {
   grid-column: 1/-1;
@@ -113,12 +134,18 @@ body .calc__keyboard__grid .calc__key__1 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__1:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__2 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__2:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__3 {
   display: flex;
@@ -127,12 +154,18 @@ body .calc__keyboard__grid .calc__key__3 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__3:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__4 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__4:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__5 {
   display: flex;
@@ -141,12 +174,18 @@ body .calc__keyboard__grid .calc__key__5 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__5:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__6 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__6:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__7 {
   display: flex;
@@ -155,12 +194,18 @@ body .calc__keyboard__grid .calc__key__7 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__7:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__8 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__8:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__9 {
   display: flex;
@@ -169,12 +214,18 @@ body .calc__keyboard__grid .calc__key__9 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__9:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__10 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__10:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__11 {
   display: flex;
@@ -183,12 +234,18 @@ body .calc__keyboard__grid .calc__key__11 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__11:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__12 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__12:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__13 {
   display: flex;
@@ -197,12 +254,18 @@ body .calc__keyboard__grid .calc__key__13 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__13:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__14 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__14:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__15 {
   display: flex;
@@ -211,12 +274,18 @@ body .calc__keyboard__grid .calc__key__15 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__15:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__16 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__16:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__17 {
   display: flex;
@@ -225,12 +294,18 @@ body .calc__keyboard__grid .calc__key__17 {
   border-radius: 5px;
   padding: 5px;
 }
+body .calc__keyboard__grid .calc__key__17:hover {
+  cursor: pointer;
+}
 body .calc__keyboard__grid .calc__key__18 {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
+}
+body .calc__keyboard__grid .calc__key__18:hover {
+  cursor: pointer;
 }
 body .calc__keyboard__grid .calc__key__4 {
   text-transform: uppercase;
@@ -259,6 +334,7 @@ body.theme__1 .calc__head__switcher__wrapper__bar__point {
 }
 body.theme__1 .calc__bar {
   background-color: hsl(224deg, 36%, 15%);
+  color: hsl(30deg, 25%, 89%);
 }
 body.theme__1 .calc__keyboard {
   background-color: hsl(223deg, 31%, 20%);
@@ -382,6 +458,7 @@ body.theme__2 .calc__head__switcher__wrapper__bar__point {
 }
 body.theme__2 .calc__bar {
   background-color: hsl(0deg, 0%, 93%);
+  color: hsl(221deg, 14%, 31%);
 }
 body.theme__2 .calc__keyboard {
   background-color: hsl(0deg, 5%, 81%);
@@ -505,6 +582,7 @@ body.theme__3 .calc__head__switcher__wrapper__bar__point {
 }
 body.theme__3 .calc__bar {
   background-color: hsl(268deg, 71%, 12%);
+  color: hsl(52deg, 100%, 62%);
 }
 body.theme__3 .calc__keyboard {
   background-color: hsl(268deg, 71%, 12%);

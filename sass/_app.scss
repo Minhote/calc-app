@@ -14,11 +14,11 @@ body {
     grid-template-rows: repeat(3, min-content);
     gap: 2rem;
 
-    @include media('800px'){
+    @include media("800px") {
       width: 60%;
     }
 
-    @include media('500px'){
+    @include media("500px") {
       width: 80%;
     }
 
@@ -86,8 +86,31 @@ body {
       grid-column: 1 / -1;
       grid-row: 2/3;
       height: 15vh;
-      position: relative;
       border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: space-between;
+
+      &__1 {
+        flex-basis: 30%;
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        font-size: 2rem;
+        padding-right: 1.5rem;
+      }
+
+      &__2 {
+        flex-basis: 60%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        font-size: 4.5rem;
+        width: 100%;
+        padding-right: 2rem;
+      }
     }
 
     &__keyboard {
@@ -110,6 +133,10 @@ body {
             justify-content: center;
             border-radius: 5px;
             padding: 5px;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
 
@@ -153,6 +180,7 @@ body {
 
       &__bar {
         background-color: theme($theme__1, "screen__bg");
+        color: theme($theme__1, "numbers__bg");
       }
 
       &__keyboard {
@@ -162,25 +190,31 @@ body {
             .calc__key__#{$i} {
               background-color: theme($theme__1, "numbers__bg");
               color: theme($theme__1, "numbers__text");
-              box-shadow: inset 0px -10px 0px -7px theme($theme__1, "numbers__shadow");
+              box-shadow: inset
+                0px -10px
+                0px -7px
+                theme($theme__1, "numbers__shadow");
             }
           }
           .calc__key__4 {
             background-color: theme($theme__1, "delete__and__reset__bg");
             color: theme($theme__1, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__1, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__1, "delete__and__reset__shadow");
           }
 
           .calc__key__17 {
             background-color: theme($theme__1, "delete__and__reset__bg");
             color: theme($theme__1, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__1, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__1, "delete__and__reset__shadow");
           }
 
           .calc__key__18 {
             background-color: theme($theme__1, "equal__bg");
             color: theme($theme__1, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__1, "equal__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__1, "equal__shadow");
           }
         }
       }
@@ -208,6 +242,7 @@ body {
 
       &__bar {
         background-color: theme($theme__2, "screen__bg");
+        color: theme($theme__2, "numbers__text");
       }
 
       &__keyboard {
@@ -217,25 +252,31 @@ body {
             .calc__key__#{$i} {
               background-color: theme($theme__2, "numbers__bg");
               color: theme($theme__2, "numbers__text");
-              box-shadow: inset 0px -10px 0px -7px theme($theme__2, "numbers__shadow");
+              box-shadow: inset
+                0px -10px
+                0px -7px
+                theme($theme__2, "numbers__shadow");
             }
           }
           .calc__key__4 {
             background-color: theme($theme__2, "delete__and__reset__bg");
             color: theme($theme__2, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__2, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__2, "delete__and__reset__shadow");
           }
 
           .calc__key__17 {
             background-color: theme($theme__2, "delete__and__reset__bg");
             color: theme($theme__2, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__2, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__2, "delete__and__reset__shadow");
           }
 
           .calc__key__18 {
             background-color: theme($theme__2, "equal__bg");
             color: theme($theme__2, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__2, "equal__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__2, "equal__shadow");
           }
         }
       }
@@ -263,6 +304,7 @@ body {
 
       &__bar {
         background-color: theme($theme__3, "screen__bg");
+        color: theme($theme__3, "numbers__text");
       }
 
       &__keyboard {
@@ -272,25 +314,31 @@ body {
             .calc__key__#{$i} {
               background-color: theme($theme__3, "numbers__bg");
               color: theme($theme__3, "numbers__text");
-              box-shadow: inset 0px -10px 0px -7px theme($theme__3, "numbers__shadow");
+              box-shadow: inset
+                0px -10px
+                0px -7px
+                theme($theme__3, "numbers__shadow");
             }
           }
           .calc__key__4 {
             background-color: theme($theme__3, "delete__and__reset__bg");
             color: theme($theme__3, "delete__and__reset__text");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__3, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__3, "delete__and__reset__shadow");
           }
 
           .calc__key__17 {
             background-color: theme($theme__3, "delete__and__reset__bg");
             color: theme($theme__3, "delete__and__reset__text");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__3, "delete__and__reset__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__3, "delete__and__reset__shadow");
           }
 
           .calc__key__18 {
             background-color: theme($theme__3, "equal__bg");
             color: theme($theme__3, "numbers__bg");
-            box-shadow: inset 0px -10px 0px -7px theme($theme__3, "equal__shadow");
+            box-shadow: inset 0px -10px 0px -7px
+              theme($theme__3, "equal__shadow");
           }
         }
       }
