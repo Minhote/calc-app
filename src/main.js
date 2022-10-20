@@ -41,10 +41,10 @@ buttons.map((el) => {
       barCalc2.innerText.at(-1),
       Number(barCalc2.innerText.at(-1))
     );
-
     //Rellenar primera parte de la operacion
-
+    // Quiza se util ?? ([0-9]*[\.]?[x\+\-\/]?)
     // Pending solve the fix that allows entering more than 2 points
+
     if (output == "reset") {
       barCalc2.innerText = "0";
     }
@@ -56,39 +56,9 @@ buttons.map((el) => {
       }
     }
 
-    if (barCalc2.innerText == "0" && Number(output)) {
-      barCalc2.innerText = output;
-    } else if (barCalc2.innerText == "0" && output == ".") {
-      barCalc2.innerText = output;
-    } else if (
-      barCalc2.innerText.at(-1).match(/[\d\.]/g) &&
-      output.match(/[^del=rst]/g)
-    ) {
-      barCalc2.innerText += output;
-    } else if (barCalc2.innerText != "0" && output == ".") {
-      barCalc2.innerText += output;
-    }
-
-    //Rellenar segunda parte de la operacion
-    if (barCalc2.innerText.match(/[0-9+\-\./x]/g)) {
-      if (barCalc2.innerText.at(-1).match(/[x/]/g) && output.match(/[\-\d]/g)) {
-        barCalc2.innerText += output;
-      } else if (
-        barCalc2.innerText.at(-1).match(/[\-\+]/g) &&
-        output.match(/\d/g)
-      ) {
-        barCalc2.innerText += output;
-      } else if (
-        barCalc2.innerText.at(-1).match(/[\-\+/x]/g) &&
-        output.match(/[\-\+/x]/g)
-      ) {
-        barCalc2.innerText = barCalc2.textContent.replace(
-          barCalc2.innerText.at(-1),
-          output
-        );
-      }
-    }
+   
   });
+
   el.addEventListener("mouseup", () => {
     el.style.filter = "brightness(1)";
   });
