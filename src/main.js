@@ -35,20 +35,15 @@ buttons.map((el) => {
     tap.currentTime = 0;
     tap.play();
     let output = e.target.dataset.id;
-    console.log(
-      output,
-      Number(output),
-      barCalc2.innerText.at(-1),
-      Number(barCalc2.innerText.at(-1))
-    );
     //Rellenar primera parte de la operacion
-    // Quiza se util ?? ([0-9]*[\.]?[x\+\-\/]?)
-    // Pending solve the fix that allows entering more than 2 points
 
     if (output == "reset") {
+      barCalc1.innerText = "";
       barCalc2.innerText = "0";
+      console.clear();
     }
 
+    // Borrar uno por uno
     if (output == "del" && barCalc2.innerText != "0") {
       barCalc2.innerText = barCalc2.textContent.slice(0, -1);
       if (barCalc2.innerText == "") {
@@ -56,7 +51,127 @@ buttons.map((el) => {
       }
     }
 
-   
+    // Función para dividir el input
+    let arrs = () => barCalc2.innerText.split(/(x|\-|\+|\/)/g);
+
+    //Ingresar numeros
+    if (!isNaN(output) && barCalc2.innerText == "0") {
+      barCalc2.innerText = output;
+      arrs();
+    }
+
+    //Conflicto de los signos
+    //Detecta si el output es un signo y lo asigna al final de la barra
+    else if (output.match(/(x|\-|\+|\/)/g)) {
+      console.log("soy signo", arrs().at(-1), arrs().at(-1).at(-1));
+      //Ingresar Numero negativo de primero
+      if (
+        (output == "-" && barCalc2.innerText == "0") ||
+        (output == "-" && barCalc2.innerText == "-")
+      ) {
+        barCalc2.innerText = output;
+        return;
+      }
+      // Comprueba si ya tiene un signo adelante
+      if (arrs().at(-1).length == "") {
+        console.log("ya hay un signo adelante", arrs().at(-2), output);
+        // Comprueba si el signo que tiene adelante es de multiplicación o división y si el output es signo "-"
+        if ((arrs().at(-2) == "x" || arrs().at(-2) == "/") && output == "-") {
+          barCalc2.innerText += output;
+        }
+        // Previniendo conflictos con el "/-" y "x-"
+        else if (
+          arrs()
+            .filter((el) => el != "")
+            .at(-1) == "-" &&
+          arrs()
+            .filter((el) => el != "")
+            .at(-2)
+            .match(/(x|\/)/g)
+        ) {
+          console.log('No deberias cambiar el "-"');
+          return;
+        }
+        //Caso contrario cambia signo sin ninguna novedad
+        else {
+          console.log("cambia signo");
+          let input = barCalc2.innerText;
+          input = input.slice(0, -1);
+          input += output;
+          barCalc2.innerText = input;
+        }
+      } else if (arrs().at(-1).at(-1).match(/\d/g)) {
+        barCalc2.innerText += output;
+      }
+    }
+    // Conflicto de los puntos
+    else if (output == "." && barCalc2.innerText == "0") {
+      barCalc2.innerText = output;
+      arrs();
+    } else if (output == ".") {
+      if (arrs().at(-1).includes(".")) {
+        return;
+      } else {
+        barCalc2.innerText += output;
+      }
+    } else if (output != "=" && isNaN(output)) {
+      return;
+    } else if (output == "=") {
+      console.clear();
+      //Resolver Operación
+      let signosDeOperación = [];
+      let ar = arrs().filter((el) => el != "");
+      ar.map((el, i) => {
+        //console.log(typeof ar[i - 1], el, ar[i + 1]);
+        if (el == "-" && ar[i - 1] === undefined) {
+          return;
+        }
+        if (el.match(/[x\+\-\/]/g) && ar[i - 1].match(/[^x\+\-\/]/g)) {
+          signosDeOperación.push(el);
+        }
+      });
+      console.log(ar);
+      let arnovo = [];
+      let res = [];
+
+      signosDeOperación.map((el, i) => {
+        //console.log(ar.indexOf(el));
+        let part = ar.splice(0, ar.indexOf(el) + 1);
+        part.pop();
+        arnovo.push(part);
+
+        if (el == "x") {
+          signosDeOperación[i] = "*";
+        }
+      });
+      console.log(signosDeOperación);
+
+      arnovo.map((el) => {
+        if (el.length == 2) {
+          console.log(el, arnovo.indexOf(el));
+          arnovo[arnovo.indexOf(el)] = [el[0] + el[1]];
+        }
+      });
+
+      if (ar.length == 2) {
+        ar = [ar[0] + ar[1]];
+      }
+      console.log(arnovo, ar, [...arnovo, [...ar]].flat());
+
+      // Finalmente se evalua y muestra el resultado
+      [...arnovo, [...ar]].flat().map((el, i) => {
+        res.push(el);
+        res.push(signosDeOperación[i]);
+      });
+      res.pop();
+      let result = eval(res.join(""));
+      barCalc1.innerText = barCalc2.innerText;
+      barCalc2.innerText = result;
+    } else {
+      barCalc2.innerText += output;
+      arrs();
+    }
+    //console.log(arrs());
   });
 
   el.addEventListener("mouseup", () => {
