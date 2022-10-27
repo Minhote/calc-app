@@ -18,6 +18,9 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+body .shine {
+  filter: brightness(1.7) !important;
+}
 body .calc {
   width: 35%;
   height: 80%;

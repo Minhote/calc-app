@@ -7,6 +7,10 @@ body {
   align-items: center;
   min-height: 100vh;
 
+  .shine {
+    filter: brightness(1.7) !important;
+  }
+
   .calc {
     width: 35%;
     height: 80%;
