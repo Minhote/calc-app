@@ -6,7 +6,7 @@ let point = document.querySelector(
 let buttons = [...document.querySelectorAll('[class^="calc__key__"]')];
 let barCalc1 = document.querySelector(".calc__bar__1");
 let barCalc2 = document.querySelector(".calc__bar__2");
-
+console.log(buttons);
 //Audio
 let tap = new Audio("./tap.wav");
 
@@ -35,9 +35,29 @@ buttons.map((el) => {
     tap.currentTime = 0;
     tap.play();
     let output = e.target.dataset.id;
-    //Rellenar primera parte de la operacion
 
+    // Resetear todo si ya esta lleno (Es una calculadore normal, no cientifica XD)
+    if (
+      output.match(/\d/g) &&
+      barCalc1.innerText != "" &&
+      barCalc2.innerText != ""
+    ) {
+      buttons[16].classList.remove("shine");
+      barCalc1.innerText = "";
+      barCalc2.innerText = "";
+    } else if (
+      output.match(/(del|x|\+|\-|\/|=)/g) &&
+      barCalc1.innerText != "" &&
+      barCalc2.innerText != ""
+    ) {
+      return;
+    }
+
+    //Rellenar primera parte de la operacion
     if (output == "reset") {
+      if (buttons[16].classList.contains("shine")) {
+        buttons[16].classList.remove("shine");
+      }
       barCalc1.innerText = "";
       barCalc2.innerText = "0";
       console.clear();
@@ -165,8 +185,24 @@ buttons.map((el) => {
       });
       res.pop();
       let result = eval(res.join(""));
-      barCalc1.innerText = barCalc2.innerText;
-      barCalc2.innerText = result;
+
+      //Controlar los decimales
+      if (result.toString().indexOf(".") != -1) {
+        let arrofres = result.toString().split(".");
+
+        if (arrofres[1].length > 10) {
+          arrofres[1] = arrofres[1].slice(0, 10);
+        }
+
+        if (arrofres[1].indexOf("0") != -1) {
+          arrofres[1] = arrofres[1].slice(0, arrofres[1].indexOf("0"));
+        }
+        barCalc1.innerText = barCalc2.innerText;
+        barCalc2.innerText = arrofres.join(".");
+      } else {
+        barCalc1.innerText = barCalc2.innerText;
+        barCalc2.innerText = result;
+      }
     } else {
       barCalc2.innerText += output;
       arrs();
@@ -176,5 +212,8 @@ buttons.map((el) => {
 
   el.addEventListener("mouseup", () => {
     el.style.filter = "brightness(1)";
+    if (barCalc1.innerText != "" && barCalc2.innerText != "") {
+      buttons[16].classList.add("shine");
+    }
   });
 });
